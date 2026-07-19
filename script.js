@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initMarquee();
   initAboutTextReveal();
+  initWaveform();
 });
 
 function initMarquee() {
@@ -76,4 +77,24 @@ function initAboutTextReveal() {
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
   update();
+}
+
+function initWaveform() {
+  const container = document.getElementById('waveformBars');
+  if (!container) return;
+
+  // Bar heights (px) copied left-to-right from the Figma waveform mockup.
+  const heights = [
+    6.2, 15.1, 34.7, 18.7, 32.9, 40, 32.9, 18.7, 34.7, 15.1, 6.2, 22.2, 31.1,
+    25.8, 25.8, 34.7, 38.2, 27.6, 34.7, 27.6, 18.7, 22.2, 11.6, 25.8, 22.2,
+    25.8, 34.7, 22.2, 13.3, 6.2, 18.7, 11.6, 15.1, 20.4, 25.8, 13.3,
+  ];
+
+  const fragment = document.createDocumentFragment();
+  heights.forEach((h) => {
+    const bar = document.createElement('span');
+    bar.style.height = h + 'px';
+    fragment.appendChild(bar);
+  });
+  container.appendChild(fragment);
 }
