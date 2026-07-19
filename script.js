@@ -83,18 +83,35 @@ function initWaveform() {
   const container = document.getElementById('waveformBars');
   if (!container) return;
 
-  // Bar heights (px) copied left-to-right from the Figma waveform mockup.
-  const heights = [
-    6.2, 15.1, 34.7, 18.7, 32.9, 40, 32.9, 18.7, 34.7, 15.1, 6.2, 22.2, 31.1,
-    25.8, 25.8, 34.7, 38.2, 27.6, 34.7, 27.6, 18.7, 22.2, 11.6, 25.8, 22.2,
-    25.8, 34.7, 22.2, 13.3, 6.2, 18.7, 11.6, 15.1, 20.4, 25.8, 13.3,
-  ];
+  // Deterministic PRNG (mulberry32) so the "random" waveform is stable
+  // across reloads instead of reshuffling every time the page loads.
+  function mulberry32(seed) {
+    return function () {
+      seed |= 0;
+      seed = (seed + 0x6d2b79f5) | 0;
+      let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  const random = mulberry32(42);
+  const barCount = 40;
+  const minHeight = 6;
+  const maxHeight = 40;
 
   const fragment = document.createDocumentFragment();
-  heights.forEach((h) => {
+  for (let i = 0; i < barCount; i += 1) {
+    const t = i / (barCount - 1);
+    // Taller near both edges, dips toward the middle, then climbs back up.
+    const envelope = 1 - 0.65 * 4 * t * (1 - t);
+    // Organic per-bar jitter on top of the envelope, not a perfect rhythm.
+    const jitter = 0.6 + random() * 0.4;
+    const height = minHeight + (maxHeight - minHeight) * envelope * jitter;
+
     const bar = document.createElement('span');
-    bar.style.height = h + 'px';
+    bar.style.height = Math.round(height * 10) / 10 + 'px';
     fragment.appendChild(bar);
-  });
+  }
   container.appendChild(fragment);
 }
