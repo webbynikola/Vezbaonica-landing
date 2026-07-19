@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initWaveform();
   initPricingToggle();
   initFaqAccordion();
+  initTestimonialsScroll();
 });
 
 function initMarquee() {
@@ -164,5 +165,17 @@ function initFaqAccordion() {
     if (openItem) {
       setOpen(openItem, true);
     }
+  });
+}
+
+function initTestimonialsScroll() {
+  // Duplicate each column's image group so the CSS animation (0 -> -50%)
+  // loops seamlessly, same trick as the horizontal marquee.
+  document.querySelectorAll('.t-col__track').forEach((track) => {
+    const group = track.querySelector('.t-col__group');
+    if (!group) return;
+    const clone = group.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
   });
 }
