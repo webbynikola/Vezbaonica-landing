@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm -f _hero_full_check.png)",
+      "Bash(curl -sL -o hero-portrait.png \"https://www.figma.com/api/mcp/asset/f0e17fc0-622d-4679-8d03-8e73ccbadc09\")",
+      "Bash(curl -sL -o hero-bubble-1.png \"https://www.figma.com/api/mcp/asset/58b6dfba-5f7a-42a0-b722-0bd1730f1bfd\")",
+      "Bash(curl -sL -o hero-bubble-2.png \"https://www.figma.com/api/mcp/asset/4848731f-f531-43b7-997a-1e5113ce61aa\")",
+      "Bash(curl -sL -o logo.png \"https://www.figma.com/api/mcp/asset/a7b6df7a-bfe7-4fe4-a91f-d5f413b0665c\")",
+      "mcp__claude_ai_Figma__get_screenshot",
+      "Bash(curl -sL -o _node755_check.png \"https://www.figma.com/api/mcp/asset/b630e334-68e9-4cd4-8318-7c10bc3a541c\")",
+      "Bash(python3 -c ' *)",
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(npx -v)",
+      "PowerShell(Start-Process \"c:\\\\Users\\\\Nikola\\\\Desktop\\\\Vezbaonica Landing\\\\index.html\")",
+      "Bash(rm -f style.css.bak)",
+      "Bash(rm -f assets/images/_debug_*.png)"
+    ]
+  }
+}
