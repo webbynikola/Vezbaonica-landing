@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initMarquee();
   initAboutTextReveal();
   initWaveform();
+  initPricingToggle();
+  initFaqAccordion();
 });
 
 function initMarquee() {
@@ -114,4 +116,53 @@ function initWaveform() {
     fragment.appendChild(bar);
   }
   container.appendChild(fragment);
+}
+
+function initPricingToggle() {
+  const toggle = document.getElementById('pricingToggle');
+  if (!toggle) return;
+
+  const buttons = toggle.querySelectorAll('.pricing__toggle-btn');
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      buttons.forEach((b) => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+    });
+  });
+}
+
+function initFaqAccordion() {
+  const items = document.querySelectorAll('.faq-item');
+  if (!items.length) return;
+
+  function setOpen(item, open) {
+    const answer = item.querySelector('.faq-item__answer');
+    item.classList.toggle('is-open', open);
+    answer.style.maxHeight = open ? answer.scrollHeight + 'px' : null;
+  }
+
+  items.forEach((item) => {
+    const question = item.querySelector('.faq-item__question');
+
+    if (item.classList.contains('is-open')) {
+      setOpen(item, true);
+    }
+
+    question.addEventListener('click', () => {
+      const wasOpen = item.classList.contains('is-open');
+      items.forEach((other) => setOpen(other, false));
+      if (!wasOpen) {
+        setOpen(item, true);
+      }
+    });
+  });
+
+  // Recalculate the open item's expanded height on resize, since
+  // reflowed text (e.g. narrower viewport) changes its scrollHeight.
+  window.addEventListener('resize', () => {
+    const openItem = document.querySelector('.faq-item.is-open');
+    if (openItem) {
+      setOpen(openItem, true);
+    }
+  });
 }
