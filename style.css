@@ -1359,7 +1359,7 @@ p {
   letter-spacing: -0.14px;
   color: var(--color-text);
   opacity: 0.8;
-  margin: 16px 0 0;
+  margin: 32px 0 0;
 }
 
 .pricing-card__footnote--center {
@@ -1843,6 +1843,48 @@ p {
 
   .features__grid {
     grid-template-columns: 1fr;
+  }
+
+  /* At full-width single-column cards the chat mockup needs its own
+     taller box (independent of the card's aspect-ratio) so 14px text
+     has room to breathe without bubbles overlapping or getting cut off. */
+  .feature-mock--chat {
+    aspect-ratio: auto;
+    height: 360px;
+  }
+
+  .chat-bubble__text {
+    font-size: 14px;
+    line-height: 19px;
+    padding: 10px 16px;
+  }
+
+  .chat-bubble--a {
+    left: 14%;
+    top: 5.56%;
+    width: 82%;
+    height: 25%;
+  }
+
+  .chat-bubble--b {
+    left: 5%;
+    top: 35.56%;
+    width: 60%;
+    height: 12.78%;
+  }
+
+  .chat-bubble--c {
+    left: 5%;
+    top: 53.33%;
+    width: 82%;
+    height: 21.11%;
+  }
+
+  .chat-bubble--typing {
+    left: 5%;
+    top: 79.44%;
+    width: 40%;
+    height: 11.67%;
   }
 
   .how__title {
