@@ -1053,8 +1053,10 @@ p {
   animation-direction: reverse;
 }
 
-.t-col:hover .t-col__track {
-  animation-play-state: paused;
+@media (hover: hover) {
+  .t-col:hover .t-col__track {
+    animation-play-state: paused;
+  }
 }
 
 .t-col__group {
