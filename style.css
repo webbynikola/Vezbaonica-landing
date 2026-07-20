@@ -784,6 +784,7 @@ p {
 
 .feature-mock--chat {
   position: relative;
+  aspect-ratio: 336 / 253;
 }
 
 .chat-bubble {
@@ -809,40 +810,43 @@ p {
   position: relative;
   z-index: 1;
   margin: 0;
-  padding: 0 26px;
+  padding: 0 16px;
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: 16px;
-  line-height: 22px;
-  letter-spacing: -0.16px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.14px;
   color: var(--color-text);
 }
 
+/* Positions/sizes match the Figma "Cet podrske vizual" reference frame
+   (336x253 mockup), expressed as % so the layout stays identical at any
+   card width instead of relying on breakpoint-specific overrides. */
 .chat-bubble--a {
-  left: 21.32%;
-  top: 11.07%;
-  width: 73.52%;
-  height: 22.53%;
+  left: 21.43%;
+  top: 7.91%;
+  width: 72.6%;
+  height: 21.34%;
 }
 
 .chat-bubble--b {
-  left: 4.9%;
-  top: 41.5%;
-  width: 62.49%;
-  height: 13.83%;
+  left: 5.95%;
+  top: 37.15%;
+  width: 60.71%;
+  height: 13.44%;
 }
 
 .chat-bubble--c {
-  left: 4.9%;
-  top: 61.66%;
-  width: 62.49%;
-  height: 22.53%;
+  left: 5.95%;
+  top: 58.5%;
+  width: 60.71%;
+  height: 21.34%;
 }
 
 .chat-bubble--typing {
-  left: 4.9%;
-  top: 90.51%;
-  width: 62.49%;
+  left: 5.95%;
+  top: 87.75%;
+  width: 60.71%;
   height: 13.83%;
 }
 
@@ -851,7 +855,7 @@ p {
   z-index: 1;
   top: 37%;
   height: 26%;
-  border-radius: 27px;
+  border-radius: 999px;
   background: #eaeaea;
 }
 
@@ -1698,19 +1702,6 @@ p {
     margin-top: 40px;
   }
 
-  /* Chat mockup text is a fixed px size but its bubble boxes are sized by
-     % of the card, so on narrow cards (2-col/1-col mobile) the text no
-     longer fits and spills into neighboring bubbles. Shrink it to fit. */
-  .chat-bubble__text {
-    font-size: 11px;
-    line-height: 14px;
-    padding: 0 10px;
-  }
-
-  .chat-bubble__dot {
-    border-radius: 14px;
-  }
-
   .how {
     padding-top: 56px;
     padding-bottom: 56px;
@@ -1793,12 +1784,16 @@ p {
   .hero__title {
     font-size: 36px;
     line-height: 42px;
-    letter-spacing: -1px;
+  }
+
+  :root {
+    --container-pad: 18px;
   }
 
   .topbar__text {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: -0.14px;
   }
 
   .hero__nav .btn--pill {
@@ -1806,14 +1801,29 @@ p {
     font-size: 14px;
   }
 
+  .marquee {
+    height: 52px;
+  }
+
+  .marquee__group {
+    gap: 28px;
+    padding-right: 28px;
+  }
+
   .marquee__item {
-    font-size: 18px;
+    font-size: 20px;
+    letter-spacing: -0.2px;
   }
 
   .who__title {
     font-size: 34px;
     line-height: 40px;
-    letter-spacing: -1px;
+  }
+
+  .who__subtitle {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.14px;
   }
 
   .who__grid {
@@ -1822,12 +1832,20 @@ p {
 
   .who-card__desc {
     margin-top: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.14px;
+  }
+
+  .about__badge span:last-child {
+    font-size: 16px;
+    letter-spacing: -0.32px;
   }
 
   .about__text {
     font-size: 24px;
     line-height: 32px;
-    letter-spacing: -0.5px;
+    letter-spacing: -1px;
     margin-top: 32px;
   }
 
@@ -1838,70 +1856,62 @@ p {
   .features__title {
     font-size: 34px;
     line-height: 40px;
-    letter-spacing: -1px;
+  }
+
+  .features__subtitle {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.14px;
   }
 
   .features__grid {
     grid-template-columns: 1fr;
   }
 
-  /* At full-width single-column cards the chat mockup needs its own
-     taller box (independent of the card's aspect-ratio) so 14px text
-     has room to breathe without bubbles overlapping or getting cut off. */
-  .feature-mock--chat {
-    aspect-ratio: auto;
-    height: 360px;
-  }
-
-  .chat-bubble__text {
+  .feature-card__desc {
     font-size: 14px;
-    line-height: 19px;
-    padding: 10px 16px;
-  }
-
-  .chat-bubble--a {
-    left: 14%;
-    top: 5.56%;
-    width: 82%;
-    height: 25%;
-  }
-
-  .chat-bubble--b {
-    left: 5%;
-    top: 35.56%;
-    width: 60%;
-    height: 12.78%;
-  }
-
-  .chat-bubble--c {
-    left: 5%;
-    top: 53.33%;
-    width: 82%;
-    height: 21.11%;
-  }
-
-  .chat-bubble--typing {
-    left: 5%;
-    top: 79.44%;
-    width: 40%;
-    height: 11.67%;
+    line-height: 20px;
+    letter-spacing: -0.14px;
   }
 
   .how__title {
-    font-size: 32px;
-    line-height: 38px;
-    letter-spacing: -1px;
+    font-size: 34px;
+    line-height: 40px;
+  }
+
+  .how__subtitle {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.14px;
+  }
+
+  .how-step__desc {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.14px;
   }
 
   .testimonials__title {
-    font-size: 32px;
-    line-height: 38px;
-    letter-spacing: -1px;
+    font-size: 34px;
+    line-height: 40px;
+  }
+
+  .testimonials__subtitle {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.14px;
   }
 
   .pricing__title {
     font-size: 28px;
     line-height: 34px;
+    letter-spacing: -1px;
+  }
+
+  .pricing__subtitle {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.14px;
   }
 
   .pricing__toggle {
@@ -1909,23 +1919,77 @@ p {
   }
 
   .faq__title {
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: -1px;
   }
 
   .faq-item__question {
-    font-size: 17px;
-    line-height: 23px;
-    padding: 20px 16px;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.18px;
+    padding: 20px 20px;
   }
 
   .faq-item__answer p {
-    padding: 0 16px 20px 16px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.14px;
+    padding: 0 20px 20px 20px;
+  }
+
+  .faq__list {
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .footer__row {
+    gap: 32px;
   }
 
   .footer__title {
-    font-size: 28px;
-    line-height: 34px;
+    font-size: 40px;
+    line-height: 46px;
+    letter-spacing: -2px;
+  }
+
+  .footer__desc {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.14px;
+  }
+
+  .footer__email {
+    margin-top: 16px;
+  }
+
+  .footer__divider {
+    margin-top: 40px;
+  }
+
+  /* Figma stacks the social icons in their own column above the
+     copyright line on mobile, instead of a horizontal row, and scales
+     the icons up (36px -> 52px) to match. */
+  .footer__row--bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0;
+    gap: 60px;
+  }
+
+  .footer__social {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer__social-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .footer__social-icon img {
+    width: 28.89px;
+    height: 28.89px;
   }
 }
 
@@ -1934,19 +1998,59 @@ p {
    ========================================================================== */
 
 @media (max-width: 480px) {
+  .hero__text {
+    text-align: center;
+  }
+
+  .hero__text .badge {
+    height: 38px;
+    padding: 6px 16px 6px 6px;
+  }
+
+  .hero__text .badge__avatar {
+    width: 26px;
+    height: 26px;
+  }
+
+  .hero__text .badge__text {
+    font-size: 16px;
+    letter-spacing: -0.32px;
+  }
+
+  .hero__title {
+    margin-top: 20px;
+  }
+
+  .hero__desc {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.14px;
+  }
+
+  .hero__cta-bottom {
+    width: 100%;
+    font-size: 14px;
+    letter-spacing: -0.14px;
+  }
+
   .hero__visual {
     width: 100%;
     max-width: 336px;
-    aspect-ratio: 336 / 496;
+    aspect-ratio: 336 / 385;
     margin-inline: auto;
   }
 
   .hero__bg,
   .hero__portrait {
     left: 0;
-    top: 8.26%;
+    top: 0;
     width: 100%;
-    height: 78.02%;
+    height: 100%;
+  }
+
+  .hero__portrait {
+    object-fit: cover;
+    object-position: bottom;
   }
 }
 
@@ -1959,12 +2063,34 @@ p {
     display: none;
   }
 
+  /* Figma's mobile testimonials are a plain static stacked list — no
+     crop/scroll — so drop the auto-scroll animation and height cap that
+     the desktop 2-column version uses. */
   .testimonials__gallery--mobile {
     display: flex;
+    flex-basis: auto;
     width: 100%;
     max-width: 100%;
     aspect-ratio: auto;
-    height: min(640px, 80vh);
+    height: auto;
+    overflow: visible;
+  }
+
+  .testimonials__gallery--mobile .t-col {
+    overflow: visible;
+  }
+
+  .testimonials__gallery--mobile .t-col__track {
+    animation: none;
+  }
+
+  .testimonials__gallery--mobile .t-col__group {
+    gap: 20px;
+    padding-bottom: 0;
+  }
+
+  .testimonials__gallery--mobile .t-col__group[aria-hidden="true"] {
+    display: none;
   }
 
   /* Nav CTA is redundant with the hero's own "Želim da počnem" buttons
