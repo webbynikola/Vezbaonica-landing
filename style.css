@@ -2164,7 +2164,7 @@ p {
   }
 
   .testimonials__gallery--mobile .t-col__track {
-    animation: t-scroll 45s linear infinite reverse;
+    animation: t-scroll 65s linear infinite reverse;
   }
 
   .testimonials__gallery--mobile .t-col__group {
