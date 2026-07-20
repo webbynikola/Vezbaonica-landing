@@ -1684,6 +1684,19 @@ p {
     margin-top: 40px;
   }
 
+  /* Chat mockup text is a fixed px size but its bubble boxes are sized by
+     % of the card, so on narrow cards (2-col/1-col mobile) the text no
+     longer fits and spills into neighboring bubbles. Shrink it to fit. */
+  .chat-bubble__text {
+    font-size: 11px;
+    line-height: 14px;
+    padding: 0 10px;
+  }
+
+  .chat-bubble__dot {
+    border-radius: 14px;
+  }
+
   .how {
     padding-top: 56px;
     padding-bottom: 56px;
@@ -1879,22 +1892,6 @@ p {
     width: 100%;
     height: 78.02%;
   }
-
-  .hero__bubble--1 {
-    left: 8.37%;
-    top: 72.38%;
-    width: 83.26%;
-    height: 27.71%;
-    transform: rotate(1.49deg);
-  }
-
-  .hero__bubble--2 {
-    left: 3.57%;
-    top: 0%;
-    width: 96.39%;
-    height: 28.93%;
-    transform: rotate(3deg);
-  }
 }
 
 /* ==========================================================================
@@ -1912,5 +1909,17 @@ p {
     max-width: 100%;
     aspect-ratio: auto;
     height: min(640px, 80vh);
+  }
+
+  /* Nav CTA is redundant with the hero's own "Želim da počnem" buttons
+     on mobile — keep only the logo in the header. */
+  .hero__nav-cta {
+    display: none;
+  }
+
+  /* Chat bubbles overlaid on the hero photo only work at the wide desktop
+     composition — on mobile only the photo itself should show. */
+  .hero__bubble {
+    display: none;
   }
 }
