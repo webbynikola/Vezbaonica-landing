@@ -2150,4 +2150,28 @@ p {
   .hero__bubble {
     display: none;
   }
+
+  /* Below 768px the single mobile testimonials column switches from the
+     static stacked list (960px breakpoint above) back to an auto-scrolling
+     marquee: fixed 680px viewport, clipped, animating downward forever. */
+  .testimonials__gallery--mobile {
+    height: 680px;
+    overflow: hidden;
+  }
+
+  .testimonials__gallery--mobile .t-col {
+    overflow: hidden;
+  }
+
+  .testimonials__gallery--mobile .t-col__track {
+    animation: t-scroll 45s linear infinite reverse;
+  }
+
+  .testimonials__gallery--mobile .t-col__group {
+    padding-bottom: 20px;
+  }
+
+  .testimonials__gallery--mobile .t-col__group[aria-hidden="true"] {
+    display: flex;
+  }
 }
