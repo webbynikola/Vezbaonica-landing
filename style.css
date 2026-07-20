@@ -784,7 +784,6 @@ p {
 
 .feature-mock--chat {
   position: relative;
-  aspect-ratio: 336 / 253;
 }
 
 .chat-bubble {
@@ -810,43 +809,43 @@ p {
   position: relative;
   z-index: 1;
   margin: 0;
-  padding: 0 16px;
+  padding: 0 26px;
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -0.14px;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.16px;
   color: var(--color-text);
 }
 
-/* Positions/sizes match the Figma "Cet podrske vizual" reference frame
-   (336x253 mockup), expressed as % so the layout stays identical at any
+/* Positions/sizes match the Figma "Program features" desktop frame
+   (408x253 mockup), expressed as % so the layout stays identical at any
    card width instead of relying on breakpoint-specific overrides. */
 .chat-bubble--a {
-  left: 21.43%;
-  top: 7.91%;
-  width: 72.6%;
-  height: 21.34%;
+  left: 21.32%;
+  top: 11.07%;
+  width: 73.52%;
+  height: 22.53%;
 }
 
 .chat-bubble--b {
-  left: 5.95%;
-  top: 37.15%;
-  width: 60.71%;
-  height: 13.44%;
+  left: 4.9%;
+  top: 41.5%;
+  width: 62.49%;
+  height: 13.83%;
 }
 
 .chat-bubble--c {
-  left: 5.95%;
-  top: 58.5%;
-  width: 60.71%;
-  height: 21.34%;
+  left: 4.9%;
+  top: 61.66%;
+  width: 62.49%;
+  height: 22.53%;
 }
 
 .chat-bubble--typing {
-  left: 5.95%;
-  top: 87.75%;
-  width: 60.71%;
+  left: 4.9%;
+  top: 90.51%;
+  width: 62.49%;
   height: 13.83%;
 }
 
@@ -1874,6 +1873,48 @@ p {
     letter-spacing: -0.14px;
   }
 
+  /* Figma's "Cet podrske vizual" mobile reference (336x253 mockup) has
+     different bubble proportions/text size than the 408x253 desktop
+     frame — override just for the single-column mobile layout. */
+  .feature-mock--chat {
+    aspect-ratio: 336 / 253;
+  }
+
+  .chat-bubble__text {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.14px;
+    padding: 0 16px;
+  }
+
+  .chat-bubble--a {
+    left: 21.43%;
+    top: 7.91%;
+    width: 72.6%;
+    height: 21.34%;
+  }
+
+  .chat-bubble--b {
+    left: 5.95%;
+    top: 37.15%;
+    width: 60.71%;
+    height: 13.44%;
+  }
+
+  .chat-bubble--c {
+    left: 5.95%;
+    top: 58.5%;
+    width: 60.71%;
+    height: 21.34%;
+  }
+
+  .chat-bubble--typing {
+    left: 5.95%;
+    top: 87.75%;
+    width: 60.71%;
+    height: 13.83%;
+  }
+
   .how__title {
     font-size: 34px;
     line-height: 40px;
@@ -2055,15 +2096,18 @@ p {
 }
 
 /* ==========================================================================
-   Mobile testimonials — single scrolling column instead of two
+   Responsive testimonials — static stacked list instead of the
+   auto-scrolling desktop carousel. Uses the same 960px breakpoint as
+   .testimonials__inner's column switch, so the carousel never animates
+   in the in-between tablet range — it just stands still.
    ========================================================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .testimonials__gallery {
     display: none;
   }
 
-  /* Figma's mobile testimonials are a plain static stacked list — no
+  /* Figma's responsive testimonials are a plain static stacked list — no
      crop/scroll — so drop the auto-scroll animation and height cap that
      the desktop 2-column version uses. */
   .testimonials__gallery--mobile {
@@ -2092,7 +2136,9 @@ p {
   .testimonials__gallery--mobile .t-col__group[aria-hidden="true"] {
     display: none;
   }
+}
 
+@media (max-width: 768px) {
   /* Nav CTA is redundant with the hero's own "Želim da počnem" buttons
      on mobile — keep only the logo in the header. */
   .hero__nav-cta {
