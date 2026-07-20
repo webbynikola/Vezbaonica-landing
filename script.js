@@ -124,10 +124,17 @@ function initPricingToggle() {
   if (!toggle) return;
 
   const buttons = toggle.querySelectorAll('.pricing__toggle-btn');
+  const grids = document.querySelectorAll('.pricing__grid[data-pricing-content]');
+
   buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
       buttons.forEach((b) => b.classList.remove('is-active'));
       btn.classList.add('is-active');
+
+      const period = btn.dataset.period;
+      grids.forEach((grid) => {
+        grid.classList.toggle('is-active', grid.dataset.pricingContent === period);
+      });
     });
   });
 }

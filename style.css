@@ -1167,11 +1167,15 @@ p {
 }
 
 .pricing__grid {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(3, 1fr);
   align-items: stretch;
   gap: 24px;
   margin-top: 44px;
+}
+
+.pricing__grid.is-active {
+  display: grid;
 }
 
 .pricing-card {
@@ -1253,6 +1257,16 @@ p {
   color: var(--color-text);
   opacity: 0.6;
   text-decoration: line-through;
+}
+
+.pricing-card__price-note {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.18px;
+  color: var(--color-text);
+  opacity: 0.6;
 }
 
 .pricing-card__desc {

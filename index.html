@@ -299,7 +299,7 @@
       <button type="button" class="pricing__toggle-btn" data-period="monthly">Mesečno</button>
     </div>
 
-    <div class="pricing__grid">
+    <div class="pricing__grid is-active" data-pricing-content="once">
       <div class="pricing-card pricing-card--featured">
         <span class="pricing-card__ribbon">Počinješ ovde</span>
         <h3 class="pricing-card__title">Jasna</h3>
@@ -327,6 +327,72 @@
         <div class="pricing-card__price">
           <span class="pricing-card__price-now">499€</span>
           <span class="pricing-card__price-old">599€</span>
+        </div>
+        <p class="pricing-card__desc">Redovnim vežbanjem u grupi gradiš identitet osobe koja ne krši svoje granice</p>
+        <ul class="pricing-card__features">
+          <li><span class="pricing-card__check"><img src="assets/images/icon-check.svg" alt=""></span>Sve iz paketa 'Jasna'</li>
+          <li><span class="pricing-card__check"><img src="assets/images/icon-check.svg" alt=""></span>90+ video i audio lekcija</li>
+          <li><span class="pricing-card__check"><img src="assets/images/icon-check.svg" alt=""></span>Radionice uživo, vežbanje granica pre nego što ih izneseš u život</li>
+          <li><span class="pricing-card__check"><img src="assets/images/icon-check.svg" alt=""></span>Mesečni poziv - postavljaš konkretna pitanja, može i anonimno</li>
+          <li><span class="pricing-card__check"><img src="assets/images/icon-check.svg" alt=""></span>1:1 poziv sa mnom na poklon (vrednost 200€)</li>
+        </ul>
+        <span class="btn pricing-card__cta pricing-card__cta--locked">
+          <img src="assets/images/icon-lock.svg" alt="" class="pricing-card__lock">
+          Otvara se kad završiš ciklus 'Jasna'
+        </span>
+        <p class="pricing-card__footnote">Radiš u svom ritmu - 30 minuta dnevno je dovoljno</p>
+      </div>
+
+      <div class="pricing-card">
+        <h3 class="pricing-card__title">Slobodna</h3>
+        <p class="pricing-card__cycle">Mastersoul - Samo za odabrane</p>
+        <div class="pricing-card__price">
+          <span class="pricing-card__price-now pricing-card__price-now--muted">/€</span>
+        </div>
+        <p class="pricing-card__desc">Visoko personalizovan grupni program u kom se spajaju psihoterapija, duhovnost i pitanje ko si ti</p>
+        <ul class="pricing-card__features">
+          <li><span class="pricing-card__check"><img src="assets/images/icon-check.svg" alt=""></span>Sve iz ciklusa 'Jasna' i 'Sigurna'</li>
+          <li><span class="pricing-card__check"><img src="assets/images/icon-check.svg" alt=""></span>Radiš uživo u grupi, dva puta mesečno - jednom predavanje, jednom direktan coaching</li>
+          <li><span class="pricing-card__check"><img src="assets/images/icon-check.svg" alt=""></span>Sklanjaš granice i ograničenja koje te sputavaju</li>
+          <li><span class="pricing-card__check"><img src="assets/images/icon-check.svg" alt=""></span>Ulaziš u pitanja koja inače guraš pod tepih</li>
+          <li><span class="pricing-card__check"><img src="assets/images/icon-check.svg" alt=""></span>1:1 poziv sa mnom na poklon (vrednost 200€)</li>
+        </ul>
+        <span class="btn pricing-card__cta pricing-card__cta--locked">
+          <img src="assets/images/icon-lock.svg" alt="" class="pricing-card__lock">
+          Otvara se kad završiš ciklus 'Sigurna'
+        </span>
+        <p class="pricing-card__footnote pricing-card__footnote--center">Otvara se po pozivu, za one koje su prošle 'Sigurna'</p>
+      </div>
+    </div>
+
+    <div class="pricing__grid" data-pricing-content="monthly">
+      <div class="pricing-card pricing-card--featured">
+        <span class="pricing-card__ribbon">Počinješ ovde</span>
+        <h3 class="pricing-card__title">Jasna</h3>
+        <p class="pricing-card__cycle">Plaćaš mesečno</p>
+        <div class="pricing-card__price">
+          <span class="pricing-card__price-now">49€/mes</span>
+          <span class="pricing-card__price-note">3 meseca po 49€</span>
+        </div>
+        <p class="pricing-card__desc">Gradiš granice koje ti vraćaju energiju, bez rata sa bilo kim. Prvi put znaš šta želiš, umesto da nagađaš</p>
+        <ul class="pricing-card__features">
+          <li><span class="pricing-card__check"><img src="assets/images/icon-check.svg" alt=""></span>50+ video i audio lekcija</li>
+          <li><span class="pricing-card__check"><img src="assets/images/icon-check.svg" alt=""></span>Nova lekcija svake nedelje, 3 meseca</li>
+          <li><span class="pricing-card__check"><img src="assets/images/icon-check.svg" alt=""></span>5-minutne vežbe stabilizacije pre stresnih razgovora</li>
+          <li><span class="pricing-card__check"><img src="assets/images/icon-check.svg" alt=""></span>Čet podrške sa ženama koje prolaze isto što i ti</li>
+          <li><span class="pricing-card__check"><img src="assets/images/icon-check.svg" alt=""></span>Sve u aplikaciji na telefonu</li>
+          <li><span class="pricing-card__check"><img src="assets/images/icon-check.svg" alt=""></span>Garancija - ako ne osetiš promenu za 3 meseca, produžavam ti pristup</li>
+        </ul>
+        <a href="#cta" class="btn btn--pill pricing-card__cta">Počni odmah</a>
+        <p class="pricing-card__footnote">Radiš u svom ritmu - 15 minuta dnevno je dovoljno</p>
+      </div>
+
+      <div class="pricing-card">
+        <h3 class="pricing-card__title">Sigurna</h3>
+        <p class="pricing-card__cycle">Plaćaš mesečno</p>
+        <div class="pricing-card__price">
+          <span class="pricing-card__price-now">99€/mes</span>
+          <span class="pricing-card__price-note">6 meseci po 99€</span>
         </div>
         <p class="pricing-card__desc">Redovnim vežbanjem u grupi gradiš identitet osobe koja ne krši svoje granice</p>
         <ul class="pricing-card__features">
